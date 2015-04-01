@@ -10,8 +10,10 @@ angular.module('starter.controllers', [])
     })
 
     .controller('SessionDetailsController', function ($scope, $stateParams, sessionsService) {
-        $scope.rateIt = function() {
-            sessionsService.rate(4, $scope.session.SessionBaseId, $scope.session.Speaker1Id);
+        $scope.rating = { value: 0};
+
+        $scope.rateIt = function () {
+            sessionsService.rate($scope.rating.value, $scope.session.SessionBaseId, $scope.session.Speaker1Id);
         };
 
         sessionsService.get($stateParams.sessionId).then(function (result) {

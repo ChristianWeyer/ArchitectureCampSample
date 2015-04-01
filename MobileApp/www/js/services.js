@@ -1,6 +1,6 @@
 angular.module('starter.services', [])
     .factory('sessionsService', function ($http) {
-        var baseUrl = "http://192.168.43.87/conferences/api/";
+        var baseUrl = "http://10.211.55.3/conferences/api/";
 
         return {
             all: function () {
