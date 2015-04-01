@@ -16,7 +16,7 @@ namespace Hosting
             var businessLogicAssembly = Assembly.Load("BusinessLogicLayer");
             builder.RegisterAssemblyTypes(businessLogicAssembly)
                 .AsImplementedInterfaces()
-                .InstancePerApiRequest();
+                .InstancePerRequest();
 
             var container = builder.Build();
             var resolver = new AutofacWebApiDependencyResolver(container);

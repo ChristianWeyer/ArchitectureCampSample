@@ -1,6 +1,6 @@
 ﻿using System.Net.Http.Formatting;
 using System.Web.Http;
-using Newtonsoft.Json;
+using System.Web.Http.Cors;
 
 namespace Hosting
 {
@@ -8,8 +8,9 @@ namespace Hosting
     {
         public static void Register(HttpConfiguration config)
         {
+            config.EnableCors(new EnableCorsAttribute("*","*","*"));
+
             var formatter = new JsonMediaTypeFormatter();
-            //formatter.SerializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.All;
 
             config.Formatters.Clear();
             config.Formatters.Add(formatter);
