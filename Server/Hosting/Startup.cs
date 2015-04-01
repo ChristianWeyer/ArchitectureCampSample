@@ -8,6 +8,7 @@ namespace Hosting
     {
         public void Configuration(IAppBuilder app)
         {
+            
             var config = new HttpConfiguration();
             WebApiConfig.Register(config);
 
